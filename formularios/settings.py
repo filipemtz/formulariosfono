@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-AUTH_USER_MODEL = 'base.User'
+AUTH_USER_MODEL = 'base.User' # teste teste teste
 
 # Application definition
 
