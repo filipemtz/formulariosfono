@@ -30,7 +30,7 @@ jobs:
           pipenv run pytest
     - name: Run flake8
       run: |
-        pipenv run flake8
+          pipenv run flake8
     - name: Run pytest cov
       run: |
         pipenv run pytest --cov=formularios
