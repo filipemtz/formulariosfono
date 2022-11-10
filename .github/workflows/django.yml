@@ -28,7 +28,7 @@ jobs:
       run: |
           pipenv install --dev
           pipenv run pytest
-    - name: Run Flake8
+    - name: Run flake8
       run: |
         pipenv run flake8
     - name: Run pytest cov
