@@ -5,10 +5,19 @@ class Questionario(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
 
+    # if __name__ in Pergunta:
+    #     def __dir__(self):
+    #         return f'Questionário: {self.titulo}'
+    # else:
+    def __str__(self):
+        return f'Questionário: {self.titulo} foi adicionado com sucesso'
+
 
 class Pergunta(models.Model):
     questionario = models.ForeignKey(Questionario, on_delete=models.CASCADE)
     texto = models.TextField()
+
+
 
 
 """
