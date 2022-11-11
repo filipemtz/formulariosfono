@@ -7,7 +7,7 @@ from formularios.base.django_assertions import assert_contains
 
 @pytest.fixture
 def resp(client):
-    resp = client.get('/home')
+    resp = client.get(reverse('home'))
     return resp
 
 
@@ -20,4 +20,4 @@ def test_home_titulo(resp):
 
 
 def test_home_link(resp):
-    assert_contains(resp, f'href="/home">Formulários')
+    assert_contains(resp, f'href="{reverse("home")}">Formulários')
