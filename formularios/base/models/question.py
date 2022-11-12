@@ -10,7 +10,7 @@ class Questionario(models.Model):
     #         return f'Questionário: {self.titulo}'
     # else:
     def __str__(self):
-        return f'Questionário: {self.titulo} foi adicionado com sucesso'
+        return f'Questionário: {self.titulo}'
 
 
 class Pergunta(models.Model):

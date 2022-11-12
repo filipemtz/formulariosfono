@@ -8,7 +8,7 @@ from .models import Questionario, Pergunta
 # Create your views here.
 def home(request):
     q = Questionario.objects.first()
-    p = Pergunta.objects.first()
+    p = Pergunta.objects.filter(questionario=q).all()
     context = {
         'questionario': q,
         'perguntas': p,
