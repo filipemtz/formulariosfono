@@ -1540,7 +1540,7 @@
 
       if (!activeElement || !nextElement) {
         // Some weirdness is happening, so we bail
-        // todo: change tests that use empty divs to avoid this check
+        // todo: change test that use empty divs to avoid this check
         return;
       }
 
