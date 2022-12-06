@@ -36,7 +36,8 @@
 				<div class="col-md-12">
 				</div>
 			</div>
-			<form role="form">
+			<form action="{% url 'home' %}"  method="post">
+                {% csrf_token %}
 				<div class="form-group">
 					 
 					<label for="exampleInputEmail1">
@@ -51,7 +52,6 @@
 					</label>
 					<input type="password" class="form-control" id="exampleInputPassword1">
 				</div>
-
                 <div>
                     <div class="text-center h5 mt-5">{{ questionario.titulo }} - {{ questionario.descricao }}</div>
                 </div>
@@ -63,23 +63,23 @@
 
                             <div>
                             <div class="form-check mt-2">
-                                <input type="radio" id="html" name="fav_language" value="0 Nunca">
+                                <input type="radio" id="0 Nunca" name="0 Nunca" value="0 Nunca">
                                 <label for="html">0 Nunca</label><br>
                             </div>
                             <div class="form-check mt-2">
-                                <input type="radio" id="html" name="fav_language" value="1 Raramente">
+                                <input type="radio" id="1 Raramente" name="1 Raramente" value="1 Raramente">
                                 <label for="html">1 Raramente</label><br>
                             </div>
                             <div class="form-check mt-2">
-                                <input type="radio" id="html" name="fav_language" value="2 Ocasionalmente">
+                                <input type="radio" id="2 Ocasionalmente" name="2 Ocasionalmente" value="2 Ocasionalmente">
                                 <label for="html">2 Ocasionalmente</label><br>
                             </div>
                             <div class="form-check mt-2">
-                                <input type="radio" id="html" name="fav_language" value="3 Frequentemente">
+                                <input type="radio" id="3 Frequentemente" name="3 Frequentemente" value="3 Frequentemente">
                                 <label for="html">3 Frequentemente</label><br>
                             </div>
                             <div class="form-check mt-2">
-                                <input type="radio" id="html" name="fav_language" value="4 Sempre">
+                                <input type="radio" id="4 Sempre" name="4 Sempre" value="4 Sempre">
                                 <label for="html">4 Sempre</label><br>
                             </div>
                             </div>
@@ -91,8 +91,9 @@
 				</div>
                 <br>
 				<button type="submit" class="btn btn-primary">
-					Submit
+					Enviar respostas
 				</button>
+            <br/> <br/>
 			</form>
 			<div class="row">
 				<div class="col-md-12">
