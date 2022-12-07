@@ -36,7 +36,7 @@
 				<div class="col-md-12">
 				</div>
 			</div>
-			<form action="{% url 'home' %}"  method="post">
+			<form role="form" action="{% url 'home' %}"  method="post">
                 {% csrf_token %}
 				<div class="form-group">
 					 
@@ -56,38 +56,35 @@
                     <div class="text-center h5 mt-5">{{ questionario.titulo }} - {{ questionario.descricao }}</div>
                 </div>
 				<div class="form-group mt-5 mb-2">
-
                     <div style="margin-left:5%">
                         {% for pergunta in perguntas %}
                             <div>{{ pergunta.texto }}</div>
-
-                            <div>
-                            <div class="form-check mt-2">
-                                <input type="radio" id="0 Nunca" name="0 Nunca" value="0 Nunca">
-                                <label for="html">0 Nunca</label><br>
-                            </div>
-                            <div class="form-check mt-2">
-                                <input type="radio" id="1 Raramente" name="1 Raramente" value="1 Raramente">
-                                <label for="html">1 Raramente</label><br>
-                            </div>
-                            <div class="form-check mt-2">
-                                <input type="radio" id="2 Ocasionalmente" name="2 Ocasionalmente" value="2 Ocasionalmente">
-                                <label for="html">2 Ocasionalmente</label><br>
-                            </div>
-                            <div class="form-check mt-2">
-                                <input type="radio" id="3 Frequentemente" name="3 Frequentemente" value="3 Frequentemente">
-                                <label for="html">3 Frequentemente</label><br>
-                            </div>
-                            <div class="form-check mt-2">
-                                <input type="radio" id="4 Sempre" name="4 Sempre" value="4 Sempre">
-                                <label for="html">4 Sempre</label><br>
-                            </div>
+                                <div>
+                                <div class="form-check mt-2">
+                                    <input type="radio" id="nunca" name="{{ pergunta.id }}" value="0 Nunca">
+                                    <label for="html">0 Nunca</label><br>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input type="radio" id="raramente" name="{{ pergunta.id }}" value="1 Raramente">
+                                    <label for="html">1 Raramente</label><br>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input type="radio" id="ocasionamente" name="{{ pergunta.id }}" value="2 Ocasionalmente">
+                                    <label for="html">2 Ocasionalmente</label><br>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input type="radio" id="frequentemente" name="{{ pergunta.id }}" value="3 Frequentemente">
+                                    <label for="html">3 Frequentemente</label><br>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input type="radio" id="sempre" name="{{ pergunta.id }}" value="4 Sempre">
+                                    <label for="html">4 Sempre</label><br>
+                                    {{ erros.e }}
+                                </div>
                             </div>
                             <br>
                         {% endfor %}
                     </div>
-
-
 				</div>
                 <br>
 				<button type="submit" class="btn btn-primary">
