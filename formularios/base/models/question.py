@@ -16,7 +16,9 @@ class Questionario(models.Model):
 class Pergunta(models.Model):
     questionario = models.ForeignKey(Questionario, on_delete=models.CASCADE)
     texto = models.TextField()
-
+    
+    class Meta:
+        ordering = ['id']
 
 
 
